@@ -1,0 +1,72 @@
+"use client";
+
+import React from "react";
+import Navbar from "../../../../../components/Navbar";
+import Hero from "../components/Hero";
+import ScalableImageSection from "../components/ScalableImageSection";
+import ThingsToDoSection from "../components/ThingsToDoSection";
+import DestinationsSection from "../components/DestinationsSection";
+import FactsSection from "../components/FactsSection";
+import ArticlesSection from "../components/ArticlesSection";
+import InteractiveMapCTA from "../components/InteractiveMapCTA";
+import EventsSection from "../components/EventsSection";
+import BookingWidget from "../components/BookingWidget";
+import Footer from "../../../../../components/Footer";
+import { AnimatePresence } from "framer-motion";
+import LoadingScreen from "../../../../../components/LoadingScreen";
+import { HOME_DATA } from "@/constants";
+
+const HomeView = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    // Artificial delay to ensure all assets/animations are ready
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <AnimatePresence mode="wait">
+        {isLoading && <LoadingScreen key="loader" />}
+      </AnimatePresence>
+
+      <Navbar />
+      <main className="relative">
+        <Hero />
+
+        <ScalableImageSection
+          title={HOME_DATA.scalable_image.title}
+          imageUrls={HOME_DATA.scalable_image.imageUrls}
+        />
+
+        <ThingsToDoSection categories={HOME_DATA.things_to_do} />
+
+        <DestinationsSection destinations={HOME_DATA.destinations} />
+
+        <FactsSection facts={HOME_DATA.facts} />
+
+        <ArticlesSection articles={HOME_DATA.articles} />
+
+        <InteractiveMapCTA
+          title={HOME_DATA.map_cta.title}
+          description={HOME_DATA.map_cta.description}
+        />
+
+        <EventsSection events={HOME_DATA.events} />
+
+        <BookingWidget
+          title={HOME_DATA.booking.title}
+          text={HOME_DATA.booking.text}
+          image={HOME_DATA.booking.image}
+          locations={HOME_DATA.booking_locations}
+        />
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default HomeView;
