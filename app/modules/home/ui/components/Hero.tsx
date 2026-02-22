@@ -73,9 +73,9 @@ const Hero: React.FC = () => {
       <div className="sticky top-0 w-full" style={{ height: "100svh" }}>
         {/* Clip wrapper — video with rounded bottom + offset */}
         <motion.div
-          className="relative w-full overflow-hidden"
+          className="relative w-full overflow-hidden sm:h-svh h-[98%]"
           style={{
-            height: "100%",
+            // height: "100%",
             clipPath,
           }}
         >
@@ -106,13 +106,10 @@ const Hero: React.FC = () => {
 
         {/* ── Hero text — OUTSIDE the clip, sits in the 132px gap below video ── */}
         {/* As user scrolls the video expands (bottom offset → 0) and covers this text */}
-        <motion.div
-          className="absolute inset-x-0 bottom-0 z-20 flex items-center px-8 sm:px-12 md:px-16 lg:px-20 pointer-events-none"
-          style={{ height: 132 }}
-        >
-          <div className="w-full flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-20">
+        <motion.div className="absolute inset-x-0 bottom-0 z-20 flex items-center px-6 sm:px-12 md:px-16 lg:px-20 pointer-events-none h-0 sm:h-[132px]">
+          <div className="w-full flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 pb-0 sm:pb-20">
             {/* Title & Subtitle */}
-            <div className="flex items-center justify-between w-full gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between w-full gap-4 sm:gap-10">
               <div className="overflow-hidden">
                 <motion.h1
                   initial={{ y: "110%" }}
@@ -122,13 +119,13 @@ const Hero: React.FC = () => {
                     ease: [0.16, 1, 0.3, 1],
                     delay: 0.9,
                   }}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-none"
+                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.9]"
                   style={{
                     fontFamily: "var(--font-geologica), sans-serif",
                     color: textColor,
                   }}
                 >
-                  The Hidden Track
+                  The Hidden <br className="sm:hidden" /> Track
                 </motion.h1>
               </div>
               <div className="overflow-hidden">
@@ -140,7 +137,7 @@ const Hero: React.FC = () => {
                     ease: [0.16, 1, 0.3, 1],
                     delay: 1.1,
                   }}
-                  className="text-sm sm:text-base font-light max-w-md"
+                  className="text-sm sm:text-base font-light max-w-[280px] sm:max-w-md"
                   style={{ color: subtitleColor }}
                 >
                   Dreaming about a captivating destination with hidden wonders?

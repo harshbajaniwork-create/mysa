@@ -113,6 +113,52 @@ export const HOME_DATA = {
       },
     },
   ],
+  carousel: [
+    {
+      type: "info",
+      title: "The Majestic Rohtang Pass",
+      description:
+        "Experience the thrill of snow-covered peaks and panoramic views of the Pir Panjal range at 13,058 feet.",
+      accentColor: "#0A441E", // Primary
+    },
+    { type: "image", src: "/images/13.png", alt: "Rohtang Pass" },
+    {
+      type: "info",
+      title: "Ancient Hadimba Temple",
+      description:
+        "A serene wooden structure dedicated to Hidimba Devi, nestled amidst giant cedar forests in Manali.",
+      accentColor: "#6B2D16", // Secondary
+    },
+    {
+      type: "image",
+      src: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=1080",
+      alt: "Hadimba Temple",
+    },
+    {
+      type: "info",
+      title: "Solang Valley Adventures",
+      description:
+        "From paragliding over snowy peaks to skiing down pristine slopes, Solang Valley is the heart of adventure.",
+      accentColor: "#E2C091", // Accent
+    },
+    { type: "image", src: "/images/12.png", alt: "Solang Valley" },
+    {
+      type: "info",
+      title: "Old Manali Vibrance",
+      description:
+        "Explore the vibrant lanes of Old Manali, home to cozy riverside cafes and a bohemian atmosphere.",
+      accentColor: "#0A441E", // Primary
+    },
+    { type: "image", src: "/images/6.png", alt: "Old Manali" },
+    {
+      type: "info",
+      title: "Jogini Waterfalls",
+      description:
+        "A peaceful trek leading to a cascading waterfall, perfect for a refreshing dip in nature's lap.",
+      accentColor: "#6B2D16", // Secondary
+    },
+    { type: "image", src: "/images/15.png", alt: "Jogini Falls" },
+  ] as const,
   facts: [
     {
       id: 1,

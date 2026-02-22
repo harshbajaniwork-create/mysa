@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useSmoothedTransform } from "../../hooks/use-smooth-transform";
@@ -27,7 +27,16 @@ const ScalableImageSection: React.FC<ScalableImageSectionProps> = ({
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  // Track scroll progress across the full 280svh section height
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Track scroll progress across the full 300svh section height
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end end"],
@@ -39,11 +48,19 @@ const ScalableImageSection: React.FC<ScalableImageSectionProps> = ({
 
   // ── Center image: 35vw → 100vw, 78vh → 100vh, radius 24px → 0px ───────
   const centerWidth = useUnit(
-    useSmoothedTransform(scrollYProgress, [0.35, 0.85], [35, 100]),
+    useSmoothedTransform(
+      scrollYProgress,
+      [0.35, 0.85],
+      [isMobile ? 85 : 35, 100],
+    ),
     "vw",
   );
   const centerHeight = useUnit(
-    useSmoothedTransform(scrollYProgress, [0.35, 0.85], [78, 100]),
+    useSmoothedTransform(
+      scrollYProgress,
+      [0.35, 0.85],
+      [isMobile ? 65 : 78, 100],
+    ),
     "vh",
   );
   const centerRadius = useUnit(
@@ -102,7 +119,7 @@ const ScalableImageSection: React.FC<ScalableImageSectionProps> = ({
           {/* ── LEFT small tall ── */}
           <motion.div
             style={{ opacity: sideOpacity, x: leftX }}
-            className="absolute left-[1vw] top-1/2 -translate-y-1/2 rounded-2xl overflow-hidden z-0"
+            className="absolute left-[1vw] top-1/2 -translate-y-1/2 rounded-2xl overflow-hidden z-0 hidden sm:block"
             aria-hidden
           >
             <div style={{ width: "10vw", height: "52vh" }}>
@@ -120,7 +137,7 @@ const ScalableImageSection: React.FC<ScalableImageSectionProps> = ({
           {/* ── LEFT double stack ── */}
           <motion.div
             style={{ opacity: sideOpacity, x: leftX }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 pointer-events-none z-0"
+            className="absolute left-0 top-1/2 -translate-y-1/2 flex-col gap-3 pointer-events-none z-0 hidden sm:flex"
             aria-hidden
           >
             <div
@@ -173,7 +190,7 @@ const ScalableImageSection: React.FC<ScalableImageSectionProps> = ({
           {/* ── RIGHT double stack ── */}
           <motion.div
             style={{ opacity: sideOpacity, x: rightX }}
-            className="absolute top-1/2 -translate-y-1/2 right-0 flex flex-col gap-3 pointer-events-none z-0"
+            className="absolute top-1/2 -translate-y-1/2 right-0 flex-col gap-3 pointer-events-none z-0 hidden sm:flex"
             aria-hidden
           >
             <div
@@ -207,7 +224,7 @@ const ScalableImageSection: React.FC<ScalableImageSectionProps> = ({
           {/* ── RIGHT small tall ── */}
           <motion.div
             style={{ opacity: sideOpacity, x: rightX }}
-            className="absolute right-[1vw] top-1/2 -translate-y-1/2 rounded-2xl overflow-hidden z-0"
+            className="absolute right-[1vw] top-1/2 -translate-y-1/2 rounded-2xl overflow-hidden z-0 hidden sm:block"
             aria-hidden
           >
             <div style={{ width: "10vw", height: "52vh" }}>

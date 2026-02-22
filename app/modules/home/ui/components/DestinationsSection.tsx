@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface Destination {
   id: number;
@@ -44,9 +45,11 @@ const DestinationsSection: React.FC<DestinationsSectionProps> = ({
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="group relative aspect-3/4 rounded-2xl overflow-hidden cursor-pointer"
             >
-              <img
+              <Image
                 src={dest.featured_image.url}
                 alt={dest.name}
+                width={500}
+                height={500}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
