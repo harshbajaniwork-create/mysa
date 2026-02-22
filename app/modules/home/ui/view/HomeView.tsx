@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../../../../../components/Navbar";
 import Hero from "../components/Hero";
 import ScalableImageSection from "../components/ScalableImageSection";
@@ -15,11 +15,12 @@ import Footer from "../../../../../components/Footer";
 import { AnimatePresence } from "framer-motion";
 import LoadingScreen from "../../../../../components/LoadingScreen";
 import { HOME_DATA } from "@/constants";
+import CircularCarousel from "../components/CircularCarousel";
 
 const HomeView = () => {
   const [isLoading, setIsLoading] = React.useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Artificial delay to ensure all assets/animations are ready
     const timer = setTimeout(() => {
       setIsLoading(false);
@@ -45,6 +46,8 @@ const HomeView = () => {
         <ThingsToDoSection categories={HOME_DATA.things_to_do} />
 
         <DestinationsSection destinations={HOME_DATA.destinations} />
+
+        <CircularCarousel radius={2200} slides={HOME_DATA.carousel} />
 
         <FactsSection facts={HOME_DATA.facts} />
 
