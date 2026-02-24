@@ -85,7 +85,7 @@ export const HOME_DATA = {
       name: "Atal Tunnel & Sissu",
       slug: "atal-tunnel",
       featured_image: {
-        url: "https://images.unsplash.com/photo-1655468713264-19e3abacfdfd?q=80&w=1000&auto=format&fit=crop",
+        url: "https://images.unsplash.com/photo-1642693411901-804bb310c6da?q=80&w=1000&auto=format&fit=crop",
       },
     },
     {
