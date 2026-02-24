@@ -359,6 +359,7 @@ const ImageCard: React.FC<{ slide: CarouselSlide }> = ({ slide }) => (
       fill
       draggable={false}
       className="object-cover"
+      sizes="10"
       style={{ pointerEvents: "none" }}
     />
   </div>

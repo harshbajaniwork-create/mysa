@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
-import Navbar from "../../../../../components/Navbar";
+
 import Hero from "../components/Hero";
 import ScalableImageSection from "../components/ScalableImageSection";
 import ThingsToDoSection from "../components/ThingsToDoSection";
@@ -11,7 +11,7 @@ import ArticlesSection from "../components/ArticlesSection";
 import InteractiveMapCTA from "../components/InteractiveMapCTA";
 import EventsSection from "../components/EventsSection";
 import BookingWidget from "../components/BookingWidget";
-import Footer from "../../../../../components/Footer";
+
 import { AnimatePresence } from "framer-motion";
 import LoadingScreen from "../../../../../components/LoadingScreen";
 import { HOME_DATA } from "@/constants";
@@ -34,7 +34,6 @@ const HomeView = () => {
         {isLoading && <LoadingScreen key="loader" />}
       </AnimatePresence>
 
-      <Navbar />
       <main className="relative">
         <Hero />
 
@@ -67,7 +66,6 @@ const HomeView = () => {
           locations={HOME_DATA.booking_locations}
         />
       </main>
-      <Footer />
     </div>
   );
 };

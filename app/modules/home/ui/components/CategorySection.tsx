@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const categories = [
   {
-    title: "About Armenia",
+    title: "About Manali",
     image: "/images/4.png",
     description: "History, culture and soul",
   },
@@ -38,7 +38,7 @@ const CategorySection = () => {
               Destination
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-primary">
-              Explore Armenia
+              Explore Manali
             </h2>
           </div>
           <button className="text-primary font-bold border-b-2 border-primary pb-1 hover:text-accent hover:border-accent transition-all">

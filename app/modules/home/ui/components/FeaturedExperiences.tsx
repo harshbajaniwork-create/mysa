@@ -25,7 +25,7 @@ const FeaturedExperiences = () => {
               Featured Experiences
             </h2>
             <p className="text-primary/60">
-              From the highest peaks to the deepest valleys, Armenia offers a
+              From the highest peaks to the deepest valleys, Himalaya offers a
               wealth of experiences for every traveler.
             </p>
           </div>
