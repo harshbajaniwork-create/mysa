@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { PROPERTIES } from "@/constants/properties";
+import { PROPERTIES } from "@/app/modules/properties/constant";
 import PropertyCard from "../components/PropertyCard";
 import FilterBar from "../components/FilterBar";
 import { Trees, Mountain, Wind } from "lucide-react";
