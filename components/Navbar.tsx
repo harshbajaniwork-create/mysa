@@ -4,11 +4,15 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Heart, Globe, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAVITEMS } from "@/constants";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isLightPage = pathname.startsWith("/properties");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +34,9 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <span
-            className={`text-3xl font-bold tracking-tighter ${isScrolled ? "text-primary" : "text-white"}`}
+            className={`text-3xl font-bold tracking-tighter ${
+              isScrolled || isLightPage ? "text-primary" : "text-white"
+            }`}
           >
             MY<span className="text-accent">S</span>A
           </span>
@@ -43,7 +49,7 @@ const Navbar = () => {
               key={item.name}
               href={item.href}
               className={`text-sm font-medium transition-colors hover:text-accent ${
-                isScrolled ? "text-foreground" : "text-white"
+                isScrolled || isLightPage ? "text-foreground" : "text-white"
               }`}
             >
               {item.name}
@@ -52,7 +58,7 @@ const Navbar = () => {
           <Link
             href="#"
             className={`px-5 py-2 rounded-full border text-sm font-medium transition-all ${
-              isScrolled
+              isScrolled || isLightPage
                 ? "border-primary text-primary hover:bg-primary hover:text-white"
                 : "border-white text-white hover:bg-white hover:text-primary"
             }`}
@@ -63,7 +69,9 @@ const Navbar = () => {
 
         {/* Icons */}
         <div
-          className={`hidden lg:flex items-center space-x-5 ${isScrolled ? "text-foreground" : "text-white"}`}
+          className={`hidden lg:flex items-center space-x-5 ${
+            isScrolled || isLightPage ? "text-foreground" : "text-white"
+          }`}
         >
           <Search
             size={20}
@@ -83,7 +91,9 @@ const Navbar = () => {
         <div className="lg:hidden flex items-center">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={isScrolled ? "text-foreground" : "text-white"}
+            className={
+              isScrolled || isLightPage ? "text-foreground" : "text-white"
+            }
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>

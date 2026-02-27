@@ -1,10 +1,10 @@
 export const NAVITEMS = [
   { name: "About Mysa", href: "#" },
+  { name: "Our Stays", href: "/properties" },
   { name: "Places to Go", href: "#" },
   { name: "Things to Do", href: "#" },
   { name: "Plan Your Trip", href: "#" },
   { name: "Experiences", href: "#" },
-  { name: "Blog", href: "#" },
 ];
 
 export const HOME_DATA = {
