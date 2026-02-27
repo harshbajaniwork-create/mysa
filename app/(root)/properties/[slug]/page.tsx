@@ -1,5 +1,5 @@
 import PropertyDetailsView from "@/app/modules/properties/ui/views/PropertyDetailsView";
-import { PROPERTIES } from "@/constants/properties";
+import { PROPERTIES } from "@/app/modules/properties/constant";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({
