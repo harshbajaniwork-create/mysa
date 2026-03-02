@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const LoadingScreen = () => {
   return (
@@ -25,7 +26,13 @@ const LoadingScreen = () => {
           }}
           className="text-4xl font-bold tracking-tighter text-primary"
         >
-          MY<span className="text-accent">S</span>A
+          <Image
+            src="/logos/mysa-logo-2.png"
+            alt="Mysa Logo"
+            width={100}
+            height={100}
+            className="h-16 w-28 object-contain"
+          />
         </motion.div>
 
         {/* Progress bar line */}

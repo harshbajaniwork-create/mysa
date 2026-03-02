@@ -9,6 +9,7 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -17,7 +18,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand & Newsletter */}
           <div className="col-span-1 md:col-span-2">
-            <h2 className="text-3xl font-bold mb-6 text-accent">Mysa</h2>
+            <Image
+              src="/logos/mysa-logo-1.png"
+              alt="Mysa Logo"
+              width={800}
+              height={800}
+              className="h-28 w-28 object-contain"
+            />
             <p className="text-white/70 mb-8 max-w-md">
               Experience peace and luxury in the heart of the Himalayas. Signup
               to our newsletter for exclusive updates and seasonal offers from
