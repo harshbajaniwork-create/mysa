@@ -6,6 +6,7 @@ import { Search, Heart, Globe, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAVITEMS } from "@/constants";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,14 +33,19 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
+
         <Link href="/" className="flex items-center">
-          <span
-            className={`text-3xl font-bold tracking-tighter ${
-              isScrolled || isLightPage ? "text-primary" : "text-white"
-            }`}
-          >
-            MY<span className="text-accent">S</span>A
-          </span>
+          <Image
+            src={
+              isScrolled || isLightPage
+                ? "/logos/mysa-logo-2.png"
+                : "/logos/mysa-logo-1.png"
+            }
+            alt="Mysa Logo"
+            width={100}
+            height={100}
+            className="h-16 w-28 object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
