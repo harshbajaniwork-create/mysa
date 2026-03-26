@@ -1,7 +1,9 @@
+export { THINGS_TO_DO } from "@/app/modules/things-to-do/constants";
+
 export const NAVITEMS = [
   { name: "Our Stays", href: "/properties", hasDropdown: false },
   { name: "Places to Go", href: "/places-to-go", hasDropdown: true },
-  { name: "Things to Do", href: "#", hasDropdown: false },
+  { name: "Things to Do", href: "/things-to-do", hasDropdown: true },
   { name: "About Mysa", href: "#", hasDropdown: false },
   { name: "Plan Your Trip", href: "#", hasDropdown: false },
   { name: "Experiences", href: "#", hasDropdown: false },

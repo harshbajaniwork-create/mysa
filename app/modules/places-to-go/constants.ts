@@ -223,7 +223,7 @@ export const PLACES_TO_GO = [
     heroImage:
       "https://upload.wikimedia.org/wikipedia/commons/7/73/Statues_for_new_monastery%2C_Kullu.jpg", // Source: Wikimedia Commons (John Hill, CC BY-SA 4.0)
     previewImage:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Statues_for_new_monastery%2C_Kullu.jpg/1024px-Statues_for_new_monastery%2C_Kullu.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Statues_for_new_monastery%2C_Kullu.jpg",
     sections: [
       {
         title: "A Hilltop Sanctuary",

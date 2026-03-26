@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import HeroSection from "../components/HeroSection";
-import Breadcrumb from "../components/Breadcrumb";
+import HeroSection from "@/components/shared/HeroSection";
+import Breadcrumb from "@/components/shared/Breadcrumb";
 import ContentSection from "../components/ContentSection";
 import RelatedPlaces from "../components/RelatedPlaces";
 import { PLACES_TO_GO } from "../../constants";
@@ -29,7 +29,11 @@ const PlacesView = ({ place }: PlacesViewProps) => {
   return (
     <main className="min-h-screen bg-white">
       <HeroSection name={place.name} heroImage={place.heroImage} />
-      <Breadcrumb placeName={place.name} />
+      <Breadcrumb
+        category="Places to Go"
+        categoryUrl="/places-to-go"
+        title={place.name}
+      />
       <ContentSection
         sections={place.sections}
         introDescription={place.description}
