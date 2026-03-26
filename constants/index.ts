@@ -1,10 +1,10 @@
 export const NAVITEMS = [
-  { name: "About Mysa", href: "#" },
-  { name: "Our Stays", href: "/properties" },
-  { name: "Places to Go", href: "#" },
-  { name: "Things to Do", href: "#" },
-  { name: "Plan Your Trip", href: "#" },
-  { name: "Experiences", href: "#" },
+  { name: "Our Stays", href: "/properties", hasDropdown: false },
+  { name: "Places to Go", href: "/places-to-go", hasDropdown: true },
+  { name: "Things to Do", href: "#", hasDropdown: false },
+  { name: "About Mysa", href: "#", hasDropdown: false },
+  { name: "Plan Your Trip", href: "#", hasDropdown: false },
+  { name: "Experiences", href: "#", hasDropdown: false },
 ];
 
 export const HOME_DATA = {
