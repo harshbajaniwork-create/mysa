@@ -11,11 +11,13 @@ import ArticlesSection from "../components/ArticlesSection";
 import InteractiveMapCTA from "../components/InteractiveMapCTA";
 import EventsSection from "../components/EventsSection";
 import BookingWidget from "../components/BookingWidget";
+import GoogleReviews from "../components/GoogleReviews";
 
 import { AnimatePresence } from "framer-motion";
 import LoadingScreen from "../../../../../components/LoadingScreen";
-import { HOME_DATA } from "@/constants";
+import { HOME_DATA, THINGS_TO_DO } from "@/constants";
 import CircularCarousel from "../components/CircularCarousel";
+import { PLACES_TO_GO } from "@/app/modules/places-to-go/constants";
 
 const HomeView = () => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -42,9 +44,27 @@ const HomeView = () => {
           imageUrls={HOME_DATA.scalable_image.imageUrls}
         />
 
-        <ThingsToDoSection categories={HOME_DATA.things_to_do} />
+        <ThingsToDoSection 
+          categories={THINGS_TO_DO.map((category, idx) => ({
+            id: idx,
+            name: category.name,
+            children: category.activities.slice(0, 3).map((act) => ({
+              name: act.title,
+              featured_description: act.description,
+              featured_image: { url: act.image },
+              slug: category.slug
+            }))
+          }))} 
+        />
 
-        <DestinationsSection destinations={HOME_DATA.destinations} />
+        <DestinationsSection 
+          destinations={PLACES_TO_GO.slice(0, 5).map((place, idx) => ({
+            id: idx,
+            name: place.name,
+            slug: place.slug,
+            featured_image: { url: place.previewImage || place.heroImage }
+          }))} 
+        />
 
         <CircularCarousel radius={2200} slides={HOME_DATA.carousel} />
 
@@ -58,6 +78,8 @@ const HomeView = () => {
         />
 
         <EventsSection events={HOME_DATA.events} />
+
+        <GoogleReviews />
 
         <BookingWidget
           title={HOME_DATA.booking.title}

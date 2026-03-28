@@ -123,7 +123,7 @@ export const THINGS_TO_DO = [
       // Sunlit forest walk
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800",
       // Apple orchard red apples
-      "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=800",
+      "/images/14.png",
       // Waterfall in mountains
       "https://images.unsplash.com/photo-1502172203436-34609ce34340?q=80&w=800",
     ],
@@ -134,8 +134,7 @@ export const THINGS_TO_DO = [
         description:
           "Stroll through lush apple orchards and learn about local cultivation.",
         // Apple orchard rows
-        image:
-          "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=600",
+        image: "/images/14.png",
       },
       {
         title: "Riverside walks",

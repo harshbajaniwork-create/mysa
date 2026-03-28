@@ -220,7 +220,7 @@ const CircularCarousel: React.FC<CircularCarouselProps> = ({
   const wheelSink = effectiveRadius - verticalOffset;
 
   return (
-    <section>
+    <section className="py-20">
       <div
         className="relative w-full overflow-hidden select-none"
         style={{

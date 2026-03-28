@@ -50,12 +50,21 @@ const amenityIcons: Record<string, any> = {
   "Family Lounge": Users,
   "Pet Friendly": Heart,
   Parking: Car,
+  Bathtub: Waves,
+  "Shared Bathroom": Users,
+  "Spacious Layout": Mountain,
+  "Attic View": Stars,
+  "All 9 Rooms": BedDouble,
 };
+
 
 const PropertyDetailsView = ({
   property,
   relatedProperties,
 }: PropertyDetailsViewProps) => {
+  const whatsappMessage = `Hi ✨\n\nThank you for reaching out to Mysa A-frame.\n\nIf you are looking for a slow mountain escape, quiet mornings, home-cooked meals and peaceful evenings among apple trees… you are in the right place 🌿\n\nSend us:\n* Your dates\n* Number of guests\n\nWe’ll check availability for you.`;
+  const whatsappUrl = `https://wa.me/917374000057?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <section className="min-h-screen bg-white">
       {/* Immersive Top Header */}
@@ -168,9 +177,14 @@ const PropertyDetailsView = ({
                     </div>
                   </div>
 
-                  <button className="w-full bg-accent text-primary py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-xl">
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-accent text-primary py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-white transition-all shadow-xl block text-center"
+                  >
                     Request Booking
-                  </button>
+                  </a>
                   <p className="text-center mt-4 text-sm font-medium opacity-60">
                     No payment required now. Flexible cancellation.
                   </p>

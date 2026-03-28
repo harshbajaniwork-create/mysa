@@ -8,6 +8,7 @@ import { EffectCards, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "@/app/globals.css";
+import { useMediaQuery } from "react-responsive";
 
 interface CardSliderProps {
   images: string[];
@@ -15,6 +16,7 @@ interface CardSliderProps {
 }
 
 export const CardSlider = ({ images, onIndexChange }: CardSliderProps) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     // Full viewport width, tall aspect ratio to match Armenia inspo
     <div className="w-full px-6 md:px-16 lg:px-24">
@@ -29,8 +31,8 @@ export const CardSlider = ({ images, onIndexChange }: CardSliderProps) => {
           modules={[EffectCards, Autoplay]}
           onSlideChange={(swiper) => onIndexChange?.(swiper.realIndex)}
           style={{
-            width: "100%",
-            height: "800px",
+            width: isMobile ? "300px" : "487px",
+            height: isMobile ? "400px" : "600px",
             aspectRatio: "3/4",
           }}
         >
@@ -44,7 +46,7 @@ export const CardSlider = ({ images, onIndexChange }: CardSliderProps) => {
                 alt={`Slide ${index + 1}`}
                 height={500}
                 width={500}
-                className="object-cover h-full w-full"
+                className="object-cover sm:h-[600px] sm:w-[487px] h-[400px] w-[300px]"
                 sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 900px"
                 priority={index === 0}
               />
