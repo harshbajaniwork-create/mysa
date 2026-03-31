@@ -4,9 +4,7 @@ export const NAVITEMS = [
   { name: "Our Stays", href: "/properties", hasDropdown: false },
   { name: "Places to Go", href: "/places-to-go", hasDropdown: true },
   { name: "Things to Do", href: "/things-to-do", hasDropdown: true },
-  { name: "About Mysa", href: "#", hasDropdown: false },
-  { name: "Plan Your Trip", href: "#", hasDropdown: false },
-  { name: "Experiences", href: "#", hasDropdown: false },
+  { name: "About Mysa", href: "/about", hasDropdown: false },
 ];
 
 export const HOME_DATA = {
@@ -17,7 +15,7 @@ export const HOME_DATA = {
       "/images/1.png",
       "/images/2.png",
       "/images/15.png",
-      "/images/4.png",
+      "/images/68.JPG",
       "/images/5.png",
       "/images/6.png",
       "/images/65.jpeg",

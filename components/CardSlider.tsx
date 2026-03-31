@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCards, Autoplay } from "swiper/modules";
@@ -17,33 +16,36 @@ interface CardSliderProps {
 
 export const CardSlider = ({ images, onIndexChange }: CardSliderProps) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+
+  // Swiper's "cards" effect loops poorly with 3 or fewer slides. Duplicating fixes index/visibility glitches.
+  const displayImages = images.length <= 3 ? [...images, ...images] : images;
+
   return (
-    // Full viewport width, tall aspect ratio to match Armenia inspo
-    <div className="w-full px-6 md:px-16 lg:px-24">
+    <div className="w-full">
       <div
-        className="relative w-full"
-        style={{ maxWidth: "900px", margin: "0 auto" }}
+        className="relative w-full flex justify-center lg:justify-end pr-0 lg:pr-8"
+        style={{ maxWidth: "600px" }}
       >
         <Swiper
           effect={"cards"}
           grabCursor={true}
           loop={true}
           modules={[EffectCards, Autoplay]}
-          onSlideChange={(swiper) => onIndexChange?.(swiper.realIndex)}
+          onSlideChange={(swiper) => onIndexChange?.(swiper.realIndex % images.length)}
           style={{
             width: isMobile ? "300px" : "487px",
             height: isMobile ? "400px" : "600px",
             aspectRatio: "3/4",
           }}
         >
-          {images.map((img, index) => (
+          {displayImages.map((img, index) => (
             <SwiperSlide
               key={index}
               className="rounded-3xl overflow-hidden shadow-2xl bg-gray-100"
             >
               <Image
                 src={img}
-                alt={`Slide ${index + 1}`}
+                alt={`Slide ${(index % images.length) + 1}`}
                 height={500}
                 width={500}
                 className="object-cover sm:h-[600px] sm:w-[487px] h-[400px] w-[300px]"

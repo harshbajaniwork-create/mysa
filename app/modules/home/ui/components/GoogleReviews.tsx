@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
@@ -35,11 +35,11 @@ const GoogleReviews = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 80%", "end start"],
+    offset: ["start 65%", "end start"],
   });
 
-  // Delay the aggressive scrolling until the section is fully in the viewport (around 0.3 progress)
-  const x = useTransform(scrollYProgress, [0, 0.3, 1], ["5%", "0%", "-45%"]);
+  // Delay the aggressive scrolling until the section is more established in view
+  const x = useTransform(scrollYProgress, [0, 0.45, 1], ["0%", "0%", "-60%"]);
 
   return (
     <section
@@ -113,10 +113,7 @@ const GoogleReviews = () => {
             className="bg-white min-w-[85vw] w-[85vw] max-w-[85vw] snap-center p-8 rounded-[2.5rem] shadow-xl shadow-primary/5 flex flex-col justify-between shrink-0"
           >
             <div>
-              <Quote
-                className="text-secondary/20 mb-6"
-                size={40}
-              />
+              <Quote className="text-secondary/20 mb-6" size={40} />
               <p className="text-lg font-medium text-primary/80 leading-relaxed mb-8">
                 &ldquo;{review.text}&rdquo;
               </p>

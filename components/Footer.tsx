@@ -1,14 +1,5 @@
-import React from "react";
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Instagram, Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
 
 const Footer = () => {
@@ -59,11 +50,6 @@ const Footer = () => {
               <li>
                 <Link href="#" className="hover:text-accent transition-colors">
                   Things to Do
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-accent transition-colors">
-                  Experiences
                 </Link>
               </li>
             </ul>
@@ -137,28 +123,10 @@ const Footer = () => {
             </h3>
             <div className="flex space-x-4">
               <Link
-                href="#"
-                className="p-3 bg-white/10 rounded-full hover:bg-accent hover:text-primary transition-all"
-              >
-                <Facebook size={20} />
-              </Link>
-              <Link
-                href="#"
+                href="https://www.instagram.com/mysa.cottage/"
                 className="p-3 bg-white/10 rounded-full hover:bg-accent hover:text-primary transition-all"
               >
                 <Instagram size={20} />
-              </Link>
-              <Link
-                href="#"
-                className="p-3 bg-white/10 rounded-full hover:bg-accent hover:text-primary transition-all"
-              >
-                <Twitter size={20} />
-              </Link>
-              <Link
-                href="#"
-                className="p-3 bg-white/10 rounded-full hover:bg-accent hover:text-primary transition-all"
-              >
-                <Youtube size={20} />
               </Link>
             </div>
           </div>

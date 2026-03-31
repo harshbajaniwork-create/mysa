@@ -28,14 +28,14 @@ const ActivitiesGrid = ({ activities }: ActivitiesGridProps) => {
             className="group flex flex-col"
           >
             {/* Image */}
-            <div className="relative aspect-4/3 rounded-2xl overflow-hidden shadow-md mb-6">
+            <div className="relative aspect-2/2 rounded-2xl overflow-hidden shadow-md mb-6">
               <Image
                 src={activity.image}
                 alt={activity.title}
-                fill
+                width={500}
+                height={500}
                 loading="lazy"
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover h-full w-full transition-transform duration-700 group-hover:scale-110 object-center"
               />
               <div className="absolute inset-0 bg-black/10 transition-opacity duration-300 group-hover:bg-transparent" />
             </div>

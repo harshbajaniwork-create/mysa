@@ -2,16 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Search,
-  Heart,
-  Globe,
-  Menu,
-  X,
-  Plus,
-  Minus,
-  ChevronDown,
-} from "lucide-react";
+import { Menu, X, Plus, Minus, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -21,10 +12,12 @@ import { PLACES_TO_GO } from "@/app/modules/places-to-go/constants";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(null);
+  const [openMobileAccordion, setOpenMobileAccordion] = useState<string | null>(
+    null,
+  );
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [hoveredItemIndex, setHoveredItemIndex] = useState(0);
-  
+
   const pathname = usePathname();
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -74,7 +67,8 @@ const Navbar = () => {
   const dropdownData = getDropdownData();
   const previewItem = dropdownData[hoveredItemIndex] || dropdownData[0];
   const isDesktopDropdownOpen = activeDropdown !== null;
-  const dropdownUrlPrefix = activeDropdown === "Places to Go" ? "/places-to-go" : "/things-to-do";
+  const dropdownUrlPrefix =
+    activeDropdown === "Places to Go" ? "/places-to-go" : "/things-to-do";
 
   return (
     <>
@@ -139,36 +133,6 @@ const Navbar = () => {
                 </Link>
               ),
             )}
-            <Link
-              href="#"
-              className={`px-5 py-2 rounded-full border text-sm font-medium transition-all ${
-                isScrolled || isLightPage
-                  ? "border-primary text-primary hover:bg-primary hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-primary"
-              }`}
-            >
-              Events
-            </Link>
-          </div>
-
-          {/* Icons */}
-          <div
-            className={`hidden lg:flex items-center space-x-5 ${
-              isScrolled || isLightPage ? "text-foreground" : "text-white"
-            }`}
-          >
-            <Search
-              size={20}
-              className="cursor-pointer hover:text-accent transition-colors"
-            />
-            <Heart
-              size={20}
-              className="cursor-pointer hover:text-accent transition-colors"
-            />
-            <Globe
-              size={20}
-              className="cursor-pointer hover:text-accent transition-colors"
-            />
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -400,13 +364,6 @@ const Navbar = () => {
                   </Link>
                 );
               })}
-            </div>
-
-            {/* Bottom icons */}
-            <div className="px-6 pt-6 flex items-center space-x-6 text-foreground border-t border-gray-100 mx-6">
-              <Search size={22} className="cursor-pointer" />
-              <Heart size={22} className="cursor-pointer" />
-              <Globe size={22} className="cursor-pointer" />
             </div>
           </motion.div>
         )}

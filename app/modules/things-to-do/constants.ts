@@ -21,12 +21,21 @@ export const THINGS_TO_DO = [
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=600",
 
     sliderImages: [
-      // Paragliding over mountains
-      "https://images.unsplash.com/photo-1711359940524-ed5e0ad9b89b?q=80&w=800",
-      // River rafting white water
-      "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800",
-      // Mountain trekking trail
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800",
+      {
+        image: "https://images.unsplash.com/photo-1711359940524-ed5e0ad9b89b?q=80&w=800",
+        title: "Sky High Thrills",
+        subtitle: "Paragliding over Solang Valley"
+      },
+      {
+        image: "https://images.unsplash.com/photo-1530866495561-507c9faab2ed?q=80&w=800",
+        title: "River Rush",
+        subtitle: "Conquer the rapids of Beas river"
+      },
+      {
+        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=800",
+        title: "Alpine Trails",
+        subtitle: "Trek into the heart of the Himalayas"
+      },
     ],
 
     activities: [
@@ -52,7 +61,7 @@ export const THINGS_TO_DO = [
           "Glide across the mountain canopies and take in breathtaking aerial views.",
         // Person on zipline through forest
         image:
-          "https://images.unsplash.com/photo-1679310218330-a4e4ecdb6101?q=80&w=600",
+          "https://images.unsplash.com/photo-1575811163627-6bdae3ada0cf?q=80&w=600",
       },
       {
         title: "ATV rides",
@@ -120,12 +129,21 @@ export const THINGS_TO_DO = [
       "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=600",
 
     sliderImages: [
-      // Sunlit forest walk
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800",
-      // Apple orchard red apples
-      "/images/14.png",
-      // Waterfall in mountains
-      "https://images.unsplash.com/photo-1502172203436-34609ce34340?q=80&w=800",
+      {
+        image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800",
+        title: "Forest Magic",
+        subtitle: "Peaceful walks among Deodar trees"
+      },
+      {
+        image: "/images/14.png",
+        title: "Orchard Trails",
+        subtitle: "Stroll through blooming apple orchids"
+      },
+      {
+        image: "https://images.unsplash.com/photo-1502172203436-34609ce34340?q=80&w=800",
+        title: "Hidden Cascades",
+        subtitle: "Follow the sound of secret waterfalls"
+      },
     ],
 
     activities: [
@@ -218,12 +236,21 @@ export const THINGS_TO_DO = [
       "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=600",
 
     sliderImages: [
-      // Indian thali / Himachali meal
-      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800",
-      // Artisan bakery / pastries
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800",
-      // Roadside dhaba / street food stall
-      "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=800",
+      {
+        image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=800",
+        title: "Authentic Flavors",
+        subtitle: "Savor the rich Himachali Dham"
+      },
+      {
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800",
+        title: "Cafe Culture",
+        subtitle: "Cozy spots in Old Manali"
+      },
+      {
+        image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=800",
+        title: "Street Eats",
+        subtitle: "Spicy and warm roadside treats"
+      },
     ],
 
     activities: [
@@ -285,12 +312,21 @@ export const THINGS_TO_DO = [
       "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=600",
 
     sliderImages: [
-      // Spring blossoms on tree
-      "https://images.unsplash.com/photo-1745524327140-01ed9fcfba19?q=80&w=800",
-      // Snow-covered Himalayan village winter
-      "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=800",
-      // Lush summer green valley
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800",
+      {
+        image: "https://images.unsplash.com/photo-1745524327140-01ed9fcfba19?q=80&w=800",
+        title: "Spring Awakening",
+        subtitle: "Witness the valley burst into color"
+      },
+      {
+        image: "https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=800",
+        title: "Winter Wonderland",
+        subtitle: "Snow-blanketed serene villages"
+      },
+      {
+        image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800",
+        title: "Summer Green",
+        subtitle: "Lush meadows under clear skies"
+      },
     ],
 
     activities: [

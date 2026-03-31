@@ -148,12 +148,11 @@ export const PROPERTIES: Property[] = [
     price: 35000,
     rating: 4.9,
     reviews: 21,
-    image:
-      "https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=2065&auto=format&fit=crop",
+    image: "/properties/A-Frame-1.JPG",
     gallery: [
-      "https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=2065",
-      "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?q=80&w=2070",
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070",
+      "/properties/A-Frame-1.JPG",
+      "/properties/A-Frame-2.JPG",
+      "/properties/A-Frame-3.JPG",
     ],
     amenities: [
       "All 9 Rooms",
@@ -169,5 +168,5 @@ export const PROPERTIES: Property[] = [
       { name: "Old Manali Market", distance: "2.0 km" },
       { name: "Jogini Falls Trek Start", distance: "3.5 km" },
     ],
-  }
+  },
 ];
